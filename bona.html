@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        body{
+            padding: 3%;
+        }
+        
+        .header {
+          /* border: 1px solid red; */
+          padding: 10px;
+        }
+        
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        .row{
+            padding: 2% 0;
+        }
+        [class*="col-"] {
+          float: left;
+          padding: 0 10px;
+          /* border: 1px solid red; */
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+        #main{font-size: 125%;}
+        h1,h2,h3,h4{padding: 0 0;margin: 0 auto;}
+        .uLined{border-bottom: 1px solid black;}
+        .rText{text-align: right;}
+        
+        </style>
+        
+</head>
+<body>
+    <div>
+        <div class="header">
+            <div class="row">
+                <div class="col-2">
+                    <img src="assets/images/buhs.png" alt="">
+                </div>
+                <center class="col-10">
+                    <h3>B.K.J. MOSQUE TRUSTS (REG. B 592) </h3>
+                    <h1>BANDRA URDU HIGH SCHOOL &</h1>
+                    <h2>JR. COLLEGE OF Se., Comm. & H.S.C. Vocational</h2>
+                    <h3>S V Road, Bandra (W), Mumbai - 400050 Phone :25422459</h3>
+                </center>
+            </div>
+        </div>
+        <div id="main">
+        
+            <div class="row">
+                <center class="col-12">
+                    <h1>Bonafide Certificate</h1>
+                </center>
+            </div>
+            <div class="row">
+                <div class="col-2">G.R. No.</div>
+                <div class="col-2 uLined">&nbsp;</div>
+                <div class="col-4">&nbsp;</div>
+                <div class="col-2">Date:</div>
+                <div class="col-2 uLined">&nbsp;</div>
+            </div>
+        
+            <div class="row">
+                <div class="col-4">This is to certify that Master</div>
+                <div class="col-8 uLined">&nbsp;</div>
+            </div>
+        
+            <div class="row">
+                <div class="col-8 uLined">&nbsp;</div>
+                <div class="col-4 rText">is a bonafide student</div>
+            </div>
+        
+            <div class="row">
+                <div class="col-6">of this school / college studying in standard</div>
+                <div class="col-6 uLined">&nbsp;</div>
+            </div>
+        
+            <div class="row">
+                <div class="col-1">from</div>
+                <div class="col-3 uLined">&nbsp;</div>
+                <div class="col-1">to</div>
+                <div class="col-3 uLined">&nbsp;</div>
+                <div class="col-4">He appeared in the S.S.0 / </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-6">H S. C Examination of Feb/March/Oct.</div>
+                <div class="col-5 uLined">&nbsp;</div>
+                <div class="col-1">and</div>
+            </div>
+            
+        
+            <div class="row">
+                <div class="col-3">passed / failed in his</div>
+                <div class="col-3 uLined">&nbsp;</div>
+                <div class="col-2">attempt.</div>
+            </div>
+        
+        
+            <div class="row">
+                <div class="col-6">As per our General Register his date of brith is</div>
+                <div class="col-6 uLined">&nbsp;</div>
+            </div>
+        
+            <div class="row">
+                <div class="col-6 uLined">(&nbsp;</div>
+                <div class="col-6 uLined rText">)</div>
+            </div>
+        
+            <div class="row">
+                <div class="col-3">and place of birth is</div>
+                <div class="col-4 uLined">&nbsp;</div>
+            </div>
+        
+            <div class="row">
+                <div class="col-8">To the best of my knowledge he bears a good moral character.</div>
+            </div>
+        
+            <div class="row">
+                <br>
+                <br>
+                <div class="col-8">&nbsp;</div>
+                <div class="col-4 rText">PRINCIPAL</div>
+            </div>
+        
+        
+        </div>
+        
+        </div>
+       
+        <script>
+
+            document.getElementById("grNo").textContent = data["gr_no"];
+            document.getElementById("studName").textContent = data["name"];
+            document.getElementById("stdDiv").textContent = data["middle_name"];
+            document.getElementById("admsnDt").textContent = data["last_name"];
+            document.getElementById("leavDt").textContent = data["place_of_birth"];
+            document.getElementById("exmYear").textContent = data["date_of_birth"];
+            document.getElementById("lastExmRemrk").textContent = data["admission_date"];
+            document.getElementById("dob").textContent = data["leaving_date"];
+            document.getElementById("dtToTxt1").textContent = data["last_class_name"];
+            document.getElementById("dtToTxt2").textContent = data["last_class_year"];
+            document.getElementById("BrthPlac").textContent = data["remarks"];
+            
+            
+            $("body").delegate("#doc_printer", "click", function(e) {
+                    var printable = $('.doc_generated_id').html();
+                    var mywindow = window.open('_self', '', '');
+                    mywindow.document.write('<html><head></head><body >');
+                    mywindow.document.write(printable);
+                    mywindow.document.write('</body></html>');
+            });
+            </script>        
+</body>
+</html>
